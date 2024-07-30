@@ -48,7 +48,7 @@ struct SettingsView: View {
         .onAppear {
             gameName = timerManager.gameName
         }
-        .frame(width: 300, height: 150)
+        .frame(width: 300, height: 200)
     }
 }
 

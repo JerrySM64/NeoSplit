@@ -14,6 +14,7 @@
 		C49E0FA82C5927EC000CF5F4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49E0FA72C5927EC000CF5F4 /* SettingsView.swift */; };
 		C49E0FAA2C5938C3000CF5F4 /* SettingsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49E0FA92C5938C3000CF5F4 /* SettingsWindowController.swift */; };
 		C49E0FAC2C59558C000CF5F4 /* KeyEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49E0FAB2C59558C000CF5F4 /* KeyEventHandler.swift */; };
+		C49E0FB02C5978C3000CF5F4 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49E0FAF2C5978C3000CF5F4 /* TimerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		C49E0FA72C5927EC000CF5F4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		C49E0FA92C5938C3000CF5F4 /* SettingsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindowController.swift; sourceTree = "<group>"; };
 		C49E0FAB2C59558C000CF5F4 /* KeyEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyEventHandler.swift; sourceTree = "<group>"; };
+		C49E0FAF2C5978C3000CF5F4 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				C422D44E2C58333D00DD0A38 /* NeoSplitApp.swift */,
 				C49E0FA72C5927EC000CF5F4 /* SettingsView.swift */,
 				C49E0FA92C5938C3000CF5F4 /* SettingsWindowController.swift */,
+				C49E0FAF2C5978C3000CF5F4 /* TimerManager.swift */,
 				C422D4522C58333E00DD0A38 /* Assets.xcassets */,
 				C422D4572C58333E00DD0A38 /* NeoSplit.entitlements */,
 				C422D4542C58333E00DD0A38 /* Preview Content */,
@@ -246,6 +249,7 @@
 				C49E0FA82C5927EC000CF5F4 /* SettingsView.swift in Sources */,
 				C49E0FAC2C59558C000CF5F4 /* KeyEventHandler.swift in Sources */,
 				C422D4512C58333D00DD0A38 /* ContentView.swift in Sources */,
+				C49E0FB02C5978C3000CF5F4 /* TimerManager.swift in Sources */,
 				C49E0FAA2C5938C3000CF5F4 /* SettingsWindowController.swift in Sources */,
 				C422D44F2C58333D00DD0A38 /* NeoSplitApp.swift in Sources */,
 			);
@@ -409,7 +413,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1A16;
+				CURRENT_PROJECT_VERSION = 1A19;
 				DEVELOPMENT_ASSET_PATHS = "\"NeoSplit/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -438,7 +442,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1A16;
+				CURRENT_PROJECT_VERSION = 1A19;
 				DEVELOPMENT_ASSET_PATHS = "\"NeoSplit/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

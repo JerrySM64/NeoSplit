@@ -19,7 +19,7 @@ class SettingsWindowController: NSWindowController, NSWindowDelegate {
         window.center()
         window.setFrameAutosaveName("Settings")
         window.isReleasedWhenClosed = false
-        window.contentView = NSHostingView(rootView: SettingsView())
+        window.contentView = NSHostingView(rootView: SettingsView().environmentObject(TimerManager()))
         super.init(window: window)
         self.window?.delegate = self
     }

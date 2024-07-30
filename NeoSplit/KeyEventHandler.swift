@@ -11,7 +11,7 @@ class KeyEventHandler: ObservableObject {
     private var startKey: String = "S"
     private var stopKey: String = "T"
     private var resetKey: String = "R"
-    @Published var timerManager: TimerManager?
+    weak var timerManager: TimerManager?
     
     init() {
         setupKeyEventMonitoring()
