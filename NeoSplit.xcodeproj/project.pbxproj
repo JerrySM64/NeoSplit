@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C422D44F2C58333D00DD0A38 /* NeoSplitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422D44E2C58333D00DD0A38 /* NeoSplitApp.swift */; };
+		C422D4512C58333D00DD0A38 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422D4502C58333D00DD0A38 /* ContentView.swift */; };
+		C422D4532C58333E00DD0A38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C422D4522C58333E00DD0A38 /* Assets.xcassets */; };
+		C422D4562C58333E00DD0A38 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C422D4552C58333E00DD0A38 /* Preview Assets.xcassets */; };
+		C422D4612C58333E00DD0A38 /* NeoSplitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422D4602C58333E00DD0A38 /* NeoSplitTests.swift */; };
+		C422D46B2C58333E00DD0A38 /* NeoSplitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422D46A2C58333E00DD0A38 /* NeoSplitUITests.swift */; };
+		C422D46D2C58333E00DD0A38 /* NeoSplitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422D46C2C58333E00DD0A38 /* NeoSplitUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C422D45D2C58333E00DD0A38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C422D4432C58333D00DD0A38 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C422D44A2C58333D00DD0A38;
+			remoteInfo = NeoSplit;
+		};
+		C422D4672C58333E00DD0A38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C422D4432C58333D00DD0A38 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C422D44A2C58333D00DD0A38;
+			remoteInfo = NeoSplit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C422D44B2C58333D00DD0A38 /* NeoSplit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeoSplit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C422D44E2C58333D00DD0A38 /* NeoSplitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoSplitApp.swift; sourceTree = "<group>"; };
+		C422D4502C58333D00DD0A38 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C422D4522C58333E00DD0A38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C422D4552C58333E00DD0A38 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C422D4572C58333E00DD0A38 /* NeoSplit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NeoSplit.entitlements; sourceTree = "<group>"; };
+		C422D45C2C58333E00DD0A38 /* NeoSplitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeoSplitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C422D4602C58333E00DD0A38 /* NeoSplitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoSplitTests.swift; sourceTree = "<group>"; };
+		C422D4662C58333E00DD0A38 /* NeoSplitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeoSplitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C422D46A2C58333E00DD0A38 /* NeoSplitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoSplitUITests.swift; sourceTree = "<group>"; };
+		C422D46C2C58333E00DD0A38 /* NeoSplitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoSplitUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C422D4482C58333D00DD0A38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C422D4592C58333E00DD0A38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C422D4632C58333E00DD0A38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C422D4422C58333D00DD0A38 = {
+			isa = PBXGroup;
+			children = (
+				C422D44D2C58333D00DD0A38 /* NeoSplit */,
+				C422D45F2C58333E00DD0A38 /* NeoSplitTests */,
+				C422D4692C58333E00DD0A38 /* NeoSplitUITests */,
+				C422D44C2C58333D00DD0A38 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C422D44C2C58333D00DD0A38 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C422D44B2C58333D00DD0A38 /* NeoSplit.app */,
+				C422D45C2C58333E00DD0A38 /* NeoSplitTests.xctest */,
+				C422D4662C58333E00DD0A38 /* NeoSplitUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C422D44D2C58333D00DD0A38 /* NeoSplit */ = {
+			isa = PBXGroup;
+			children = (
+				C422D44E2C58333D00DD0A38 /* NeoSplitApp.swift */,
+				C422D4502C58333D00DD0A38 /* ContentView.swift */,
+				C422D4522C58333E00DD0A38 /* Assets.xcassets */,
+				C422D4572C58333E00DD0A38 /* NeoSplit.entitlements */,
+				C422D4542C58333E00DD0A38 /* Preview Content */,
+			);
+			path = NeoSplit;
+			sourceTree = "<group>";
+		};
+		C422D4542C58333E00DD0A38 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C422D4552C58333E00DD0A38 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C422D45F2C58333E00DD0A38 /* NeoSplitTests */ = {
+			isa = PBXGroup;
+			children = (
+				C422D4602C58333E00DD0A38 /* NeoSplitTests.swift */,
+			);
+			path = NeoSplitTests;
+			sourceTree = "<group>";
+		};
+		C422D4692C58333E00DD0A38 /* NeoSplitUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C422D46A2C58333E00DD0A38 /* NeoSplitUITests.swift */,
+				C422D46C2C58333E00DD0A38 /* NeoSplitUITestsLaunchTests.swift */,
+			);
+			path = NeoSplitUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C422D44A2C58333D00DD0A38 /* NeoSplit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C422D4702C58333E00DD0A38 /* Build configuration list for PBXNativeTarget "NeoSplit" */;
+			buildPhases = (
+				C422D4472C58333D00DD0A38 /* Sources */,
+				C422D4482C58333D00DD0A38 /* Frameworks */,
+				C422D4492C58333D00DD0A38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NeoSplit;
+			productName = NeoSplit;
+			productReference = C422D44B2C58333D00DD0A38 /* NeoSplit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C422D45B2C58333E00DD0A38 /* NeoSplitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C422D4732C58333E00DD0A38 /* Build configuration list for PBXNativeTarget "NeoSplitTests" */;
+			buildPhases = (
+				C422D4582C58333E00DD0A38 /* Sources */,
+				C422D4592C58333E00DD0A38 /* Frameworks */,
+				C422D45A2C58333E00DD0A38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C422D45E2C58333E00DD0A38 /* PBXTargetDependency */,
+			);
+			name = NeoSplitTests;
+			productName = NeoSplitTests;
+			productReference = C422D45C2C58333E00DD0A38 /* NeoSplitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C422D4652C58333E00DD0A38 /* NeoSplitUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C422D4762C58333E00DD0A38 /* Build configuration list for PBXNativeTarget "NeoSplitUITests" */;
+			buildPhases = (
+				C422D4622C58333E00DD0A38 /* Sources */,
+				C422D4632C58333E00DD0A38 /* Frameworks */,
+				C422D4642C58333E00DD0A38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C422D4682C58333E00DD0A38 /* PBXTargetDependency */,
+			);
+			name = NeoSplitUITests;
+			productName = NeoSplitUITests;
+			productReference = C422D4662C58333E00DD0A38 /* NeoSplitUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C422D4432C58333D00DD0A38 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					C422D44A2C58333D00DD0A38 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					C422D45B2C58333E00DD0A38 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = C422D44A2C58333D00DD0A38;
+					};
+					C422D4652C58333E00DD0A38 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = C422D44A2C58333D00DD0A38;
+					};
+				};
+			};
+			buildConfigurationList = C422D4462C58333D00DD0A38 /* Build configuration list for PBXProject "NeoSplit" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C422D4422C58333D00DD0A38;
+			productRefGroup = C422D44C2C58333D00DD0A38 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C422D44A2C58333D00DD0A38 /* NeoSplit */,
+				C422D45B2C58333E00DD0A38 /* NeoSplitTests */,
+				C422D4652C58333E00DD0A38 /* NeoSplitUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C422D4492C58333D00DD0A38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C422D4562C58333E00DD0A38 /* Preview Assets.xcassets in Resources */,
+				C422D4532C58333E00DD0A38 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C422D45A2C58333E00DD0A38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C422D4642C58333E00DD0A38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C422D4472C58333D00DD0A38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C422D4512C58333D00DD0A38 /* ContentView.swift in Sources */,
+				C422D44F2C58333D00DD0A38 /* NeoSplitApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C422D4582C58333E00DD0A38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C422D4612C58333E00DD0A38 /* NeoSplitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C422D4622C58333E00DD0A38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C422D46D2C58333E00DD0A38 /* NeoSplitUITestsLaunchTests.swift in Sources */,
+				C422D46B2C58333E00DD0A38 /* NeoSplitUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C422D45E2C58333E00DD0A38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C422D44A2C58333D00DD0A38 /* NeoSplit */;
+			targetProxy = C422D45D2C58333E00DD0A38 /* PBXContainerItemProxy */;
+		};
+		C422D4682C58333E00DD0A38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C422D44A2C58333D00DD0A38 /* NeoSplit */;
+			targetProxy = C422D4672C58333E00DD0A38 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C422D46E2C58333E00DD0A38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C422D46F2C58333E00DD0A38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		C422D4712C58333E00DD0A38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NeoSplit/NeoSplit.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1A5;
+				DEVELOPMENT_ASSET_PATHS = "\"NeoSplit/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.NeoSplit.NeoSplit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C422D4722C58333E00DD0A38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NeoSplit/NeoSplit.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1A5;
+				DEVELOPMENT_ASSET_PATHS = "\"NeoSplit/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.NeoSplit.NeoSplit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C422D4742C58333E00DD0A38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.NeoSplit.NeoSplitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeoSplit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NeoSplit";
+			};
+			name = Debug;
+		};
+		C422D4752C58333E00DD0A38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.NeoSplit.NeoSplitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeoSplit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NeoSplit";
+			};
+			name = Release;
+		};
+		C422D4772C58333E00DD0A38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.NeoSplit.NeoSplitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = NeoSplit;
+			};
+			name = Debug;
+		};
+		C422D4782C58333E00DD0A38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.NeoSplit.NeoSplitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = NeoSplit;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C422D4462C58333D00DD0A38 /* Build configuration list for PBXProject "NeoSplit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C422D46E2C58333E00DD0A38 /* Debug */,
+				C422D46F2C58333E00DD0A38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C422D4702C58333E00DD0A38 /* Build configuration list for PBXNativeTarget "NeoSplit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C422D4712C58333E00DD0A38 /* Debug */,
+				C422D4722C58333E00DD0A38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C422D4732C58333E00DD0A38 /* Build configuration list for PBXNativeTarget "NeoSplitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C422D4742C58333E00DD0A38 /* Debug */,
+				C422D4752C58333E00DD0A38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C422D4762C58333E00DD0A38 /* Build configuration list for PBXNativeTarget "NeoSplitUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C422D4772C58333E00DD0A38 /* Debug */,
+				C422D4782C58333E00DD0A38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C422D4432C58333D00DD0A38 /* Project object */;
+}
