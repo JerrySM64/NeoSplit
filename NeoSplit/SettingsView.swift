@@ -25,7 +25,7 @@ struct SettingsView: View {
                     Text("Stop")
                     TextField("", text: $stopKey)
                         .frame(width: 50)
-                    multilineTextAlignment(.center)
+                        .multilineTextAlignment(.center)
                 }
                 HStack {
                     Text("Reset")
