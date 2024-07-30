@@ -94,6 +94,8 @@ class TimerManager: ObservableObject {
     
     func reset() {
         stop()
+        pausedTime = 0
+        startDate = nil
         elapsedTimeString = "00:00:00.000"
     }
     
