@@ -13,6 +13,7 @@
 		C422D4562C58333E00DD0A38 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C422D4552C58333E00DD0A38 /* Preview Assets.xcassets */; };
 		C49E0FA82C5927EC000CF5F4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49E0FA72C5927EC000CF5F4 /* SettingsView.swift */; };
 		C49E0FAA2C5938C3000CF5F4 /* SettingsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49E0FA92C5938C3000CF5F4 /* SettingsWindowController.swift */; };
+		C49E0FAC2C59558C000CF5F4 /* KeyEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49E0FAB2C59558C000CF5F4 /* KeyEventHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		C422D4662C58333E00DD0A38 /* NeoSplitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeoSplitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49E0FA72C5927EC000CF5F4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		C49E0FA92C5938C3000CF5F4 /* SettingsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindowController.swift; sourceTree = "<group>"; };
+		C49E0FAB2C59558C000CF5F4 /* KeyEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyEventHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				C422D4502C58333D00DD0A38 /* ContentView.swift */,
+				C49E0FAB2C59558C000CF5F4 /* KeyEventHandler.swift */,
 				C422D44E2C58333D00DD0A38 /* NeoSplitApp.swift */,
 				C49E0FA72C5927EC000CF5F4 /* SettingsView.swift */,
 				C49E0FA92C5938C3000CF5F4 /* SettingsWindowController.swift */,
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C49E0FA82C5927EC000CF5F4 /* SettingsView.swift in Sources */,
+				C49E0FAC2C59558C000CF5F4 /* KeyEventHandler.swift in Sources */,
 				C422D4512C58333D00DD0A38 /* ContentView.swift in Sources */,
 				C49E0FAA2C5938C3000CF5F4 /* SettingsWindowController.swift in Sources */,
 				C422D44F2C58333D00DD0A38 /* NeoSplitApp.swift in Sources */,
@@ -405,7 +409,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1A11;
+				CURRENT_PROJECT_VERSION = 1A14;
 				DEVELOPMENT_ASSET_PATHS = "\"NeoSplit/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -434,7 +438,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1A11;
+				CURRENT_PROJECT_VERSION = 1A14;
 				DEVELOPMENT_ASSET_PATHS = "\"NeoSplit/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

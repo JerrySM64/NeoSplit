@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var timerManager: TimerManager
+    @StateObject private var keyEventHandler = KeyEventHandler()
     
     var body: some View {
         VStack {
@@ -41,30 +42,27 @@ struct ContentView: View {
         }
         .padding()
         .onAppear {
-            handleKeyBindings(timerManager: timerManager)
+            keyEventHandler.timerManager = timerManager
+            updateKeyBindings()
+            NotificationCenter.default.addObserver(
+                forName: UserDefaults.didChangeNotification,
+                object: nil,
+                queue: .main
+            ) { _ in
+                updateKeyBindings()
+            }
+        }
+        .onDisappear {
+            NotificationCenter.default.removeObserver(self, name: UserDefaults.didChangeNotification, object: nil)
         }
     }
     
-    private func handleKeyBindings(timerManager: TimerManager) {
+    private func updateKeyBindings() {
         let startKey = UserDefaults.standard.string(forKey: "startKey") ?? "S"
         let stopKey = UserDefaults.standard.string(forKey: "stopKey") ?? "T"
         let resetKey = UserDefaults.standard.string(forKey: "resetKey") ?? "R"
         
-        NSEvent.addLocalMonitorForEvents(matching: .keyDown) { event in
-            if let characters = event.charactersIgnoringModifiers {
-                switch characters {
-                    case startKey:
-                        timerManager.start()
-                    case stopKey:
-                        timerManager.stop()
-                    case resetKey:
-                        timerManager.reset()
-                    default:
-                        break
-                }
-            }
-            return event
-        }
+        keyEventHandler.updateKeyBindings(startKey: startKey, stopKey: stopKey, resetKey: resetKey)
     }
 }
 
