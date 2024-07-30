@@ -11,9 +11,18 @@ struct SettingsView: View {
     @AppStorage("startKey") private var startKey: String = "S"
     @AppStorage("stopKey") private var stopKey: String = "T"
     @AppStorage("resetKey") private var resetKey: String = "R"
+    @EnvironmentObject var timerManager: TimerManager
+    @State private var gameName: String = UserDefaults.standard.string(forKey: "gameName") ?? ""
     
     var body: some View {
         Form {
+            Section(header: Text("Game Settings")) {
+                TextField("Game Name", text: $gameName)
+                    .onChange(of: gameName) { newValue in
+                        timerManager.saveGameName(newValue)
+                    }
+            }
+            
             Section(header: Text("Key Bindings")) {
                 HStack {
                     Text("Start")
@@ -36,6 +45,9 @@ struct SettingsView: View {
             }
         }
         .padding()
+        .onAppear {
+            gameName = timerManager.gameName
+        }
         .frame(width: 300, height: 150)
     }
 }
@@ -43,5 +55,6 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
+            .environmentObject(TimerManager())
     }
 }
