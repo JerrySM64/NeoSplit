@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var timerManager = TimerManager()
+    @EnvironmentObject var timerManager: TimerManager
     
     var body: some View {
         VStack {
@@ -40,6 +40,31 @@ struct ContentView: View {
             }
         }
         .padding()
+        .onAppear {
+            handleKeyBindings(timerManager: timerManager)
+        }
+    }
+    
+    private func handleKeyBindings(timerManager: TimerManager) {
+        let startKey = UserDefaults.standard.string(forKey: "startKey") ?? "S"
+        let stopKey = UserDefaults.standard.string(forKey: "stopKey") ?? "T"
+        let resetKey = UserDefaults.standard.string(forKey: "resetKey") ?? "R"
+        
+        NSEvent.addLocalMonitorForEvents(matching: .keyDown) { event in
+            if let characters = event.charactersIgnoringModifiers {
+                switch characters {
+                    case startKey:
+                        timerManager.start()
+                    case stopKey:
+                        timerManager.stop()
+                    case resetKey:
+                        timerManager.reset()
+                    default:
+                        break
+                }
+            }
+            return event
+        }
     }
 }
 
@@ -88,5 +113,6 @@ class TimerManager: ObservableObject {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(TimerManager())
     }
 }

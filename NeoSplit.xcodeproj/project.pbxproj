@@ -11,6 +11,7 @@
 		C422D4512C58333D00DD0A38 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422D4502C58333D00DD0A38 /* ContentView.swift */; };
 		C422D4532C58333E00DD0A38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C422D4522C58333E00DD0A38 /* Assets.xcassets */; };
 		C422D4562C58333E00DD0A38 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C422D4552C58333E00DD0A38 /* Preview Assets.xcassets */; };
+		C49E0FA82C5927EC000CF5F4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49E0FA72C5927EC000CF5F4 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		C422D4572C58333E00DD0A38 /* NeoSplit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NeoSplit.entitlements; sourceTree = "<group>"; };
 		C422D45C2C58333E00DD0A38 /* NeoSplitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeoSplitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C422D4662C58333E00DD0A38 /* NeoSplitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeoSplitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C49E0FA72C5927EC000CF5F4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		C422D44D2C58333D00DD0A38 /* NeoSplit */ = {
 			isa = PBXGroup;
 			children = (
+				C49E0FA72C5927EC000CF5F4 /* SettingsView.swift */,
 				C422D44E2C58333D00DD0A38 /* NeoSplitApp.swift */,
 				C422D4502C58333D00DD0A38 /* ContentView.swift */,
 				C422D4522C58333E00DD0A38 /* Assets.xcassets */,
@@ -234,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C49E0FA82C5927EC000CF5F4 /* SettingsView.swift in Sources */,
 				C422D4512C58333D00DD0A38 /* ContentView.swift in Sources */,
 				C422D44F2C58333D00DD0A38 /* NeoSplitApp.swift in Sources */,
 			);
@@ -382,7 +386,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
@@ -394,9 +398,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = NeoSplit/NeoSplit.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1A5;
+				CURRENT_PROJECT_VERSION = 1A8;
 				DEVELOPMENT_ASSET_PATHS = "\"NeoSplit/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -408,7 +413,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.NeoSplit.NeoSplit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.JerrySM64.NeoSplit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -421,9 +426,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = NeoSplit/NeoSplit.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1A5;
+				CURRENT_PROJECT_VERSION = 1A8;
 				DEVELOPMENT_ASSET_PATHS = "\"NeoSplit/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -435,7 +441,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.NeoSplit.NeoSplit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.JerrySM64.NeoSplit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
