@@ -11,9 +11,6 @@
 		C422D4512C58333D00DD0A38 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422D4502C58333D00DD0A38 /* ContentView.swift */; };
 		C422D4532C58333E00DD0A38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C422D4522C58333E00DD0A38 /* Assets.xcassets */; };
 		C422D4562C58333E00DD0A38 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C422D4552C58333E00DD0A38 /* Preview Assets.xcassets */; };
-		C422D4612C58333E00DD0A38 /* NeoSplitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422D4602C58333E00DD0A38 /* NeoSplitTests.swift */; };
-		C422D46B2C58333E00DD0A38 /* NeoSplitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422D46A2C58333E00DD0A38 /* NeoSplitUITests.swift */; };
-		C422D46D2C58333E00DD0A38 /* NeoSplitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422D46C2C58333E00DD0A38 /* NeoSplitUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,10 +38,7 @@
 		C422D4552C58333E00DD0A38 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C422D4572C58333E00DD0A38 /* NeoSplit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NeoSplit.entitlements; sourceTree = "<group>"; };
 		C422D45C2C58333E00DD0A38 /* NeoSplitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeoSplitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C422D4602C58333E00DD0A38 /* NeoSplitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoSplitTests.swift; sourceTree = "<group>"; };
 		C422D4662C58333E00DD0A38 /* NeoSplitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeoSplitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C422D46A2C58333E00DD0A38 /* NeoSplitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoSplitUITests.swift; sourceTree = "<group>"; };
-		C422D46C2C58333E00DD0A38 /* NeoSplitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoSplitUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				C422D44D2C58333D00DD0A38 /* NeoSplit */,
-				C422D45F2C58333E00DD0A38 /* NeoSplitTests */,
-				C422D4692C58333E00DD0A38 /* NeoSplitUITests */,
 				C422D44C2C58333D00DD0A38 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,23 +102,6 @@
 				C422D4552C58333E00DD0A38 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		C422D45F2C58333E00DD0A38 /* NeoSplitTests */ = {
-			isa = PBXGroup;
-			children = (
-				C422D4602C58333E00DD0A38 /* NeoSplitTests.swift */,
-			);
-			path = NeoSplitTests;
-			sourceTree = "<group>";
-		};
-		C422D4692C58333E00DD0A38 /* NeoSplitUITests */ = {
-			isa = PBXGroup;
-			children = (
-				C422D46A2C58333E00DD0A38 /* NeoSplitUITests.swift */,
-				C422D46C2C58333E00DD0A38 /* NeoSplitUITestsLaunchTests.swift */,
-			);
-			path = NeoSplitUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,7 +243,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C422D4612C58333E00DD0A38 /* NeoSplitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +250,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C422D46D2C58333E00DD0A38 /* NeoSplitUITestsLaunchTests.swift in Sources */,
-				C422D46B2C58333E00DD0A38 /* NeoSplitUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
