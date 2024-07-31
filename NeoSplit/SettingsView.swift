@@ -17,37 +17,44 @@ struct SettingsView: View {
 
     var body: some View {
         Form {
-            Section(header: Text("Game Settings")) {
+            Section(header: Text("Game Settings").font(.headline).foregroundStyle(.white)) {
                 TextField("Game", text: $gameName)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     .onChange(of: gameName) { newValue in
                         timerManager.saveGameName(newValue)
                     }
                 TextField("Category", text: $category)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     .onChange(of: category) { newValue in
                         timerManager.saveCategory(newValue)
                     }
             }
+            .listRowBackground(Color.black)
             
-            Section(header: Text("Key Bindings")) {
+            Section(header: Text("Key Bindings").font(.headline).foregroundStyle(.white)) {
                 HStack {
-                    Text("Start")
+                    Text("Start").foregroundStyle(.white)
                     TextField("", text: $startKey)
                         .frame(width: 50)
                         .multilineTextAlignment(.center)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
                 HStack {
-                    Text("Stop")
+                    Text("Stop").foregroundStyle(.white)
                     TextField("", text: $stopKey)
                         .frame(width: 50)
                         .multilineTextAlignment(.center)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
                 HStack {
-                    Text("Reset")
+                    Text("Reset").foregroundStyle(.white)
                     TextField("", text: $resetKey)
                         .frame(width: 50)
                         .multilineTextAlignment(.center)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
             }
+            .listRowBackground(Color.black)
         }
         .padding()
         .onAppear {

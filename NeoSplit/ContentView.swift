@@ -13,16 +13,28 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text(timerManager.gameName)
-                .font(.title)
-                .padding(.top)
-            
-            Text(timerManager.category)
-                .font(.subheadline)
-                .padding(.bottom)
+            VStack(alignment: .leading) {
+                Text(timerManager.gameName)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundStyle(.white)
+                    .padding([.top, .leading, .trailing])
+                
+                Text(timerManager.category)
+                    .font(.title2)
+                    .foregroundStyle(.white)
+                    .padding([.leading, .trailing, .bottom])
+            }
+            .background(Color.black)
+            .cornerRadius(10)
+            .padding()
             
             Text(timerManager.elapsedTimeString)
-                .font(.largeTitle)
+                .font(.system(size: 48, weight: .bold, design: .monospaced))
+                .foregroundStyle(.green)
+                .padding()
+                .background(Color.black)
+                .cornerRadius(10)
                 .padding()
             
             HStack {
@@ -31,24 +43,32 @@ struct ContentView: View {
                 }) {
                     Text("Start")
                         .padding()
+                        .frame(maxWidth: .infinity)
                 }
+                .buttonStyle(LiveSplitButtonStyle())
                 
                 Button(action: {
                     timerManager.stop()
                 }) {
                     Text("Stop")
                         .padding()
+                        .frame(maxWidth: .infinity)
                 }
+                .buttonStyle(LiveSplitButtonStyle())
                 
                 Button(action: {
                     timerManager.reset()
                 }) {
                     Text("Reset")
                         .padding()
+                        .frame(maxWidth: .infinity)
                 }
+                .buttonStyle(LiveSplitButtonStyle())
             }
+            .padding()
         }
         .padding()
+        .background(Color.gray.opacity(0.2))
         .onAppear {
             keyEventHandler.timerManager = timerManager
             updateKeyBindings()
@@ -74,5 +94,19 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(TimerManager())
+    }
+}
+
+struct LiveSplitButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .background(Color.black)
+            .foregroundStyle(.white)
+            .cornerRadius(10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.white, lineWidth: 2)
+            )
+            .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
     }
 }

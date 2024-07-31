@@ -13,7 +13,7 @@ class SettingsWindowController: NSWindowController, NSWindowDelegate {
 
     private init() {
         let window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 300, height: 250),
+            contentRect: NSRect(x: 0, y: 0, width: 300, height: 300),
             styleMask: [.titled, .resizable, .closable],
             backing: .buffered, defer: false)
         window.center()
