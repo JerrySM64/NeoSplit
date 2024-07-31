@@ -11,6 +11,7 @@ import SwiftUI
 class TimerManager: ObservableObject {
     @Published var elapsedTimeString: String = "00:00:00.000"
     @Published var gameName: String = UserDefaults.standard.string(forKey: "gameName") ?? "Unknown Game"
+    @Published var category: String = UserDefaults.standard.string(forKey: "category") ?? "Any%"
     
     private var timer: Timer?
     private var startDate: Date?
@@ -56,5 +57,10 @@ class TimerManager: ObservableObject {
     func saveGameName(_ name: String) {
         gameName = name
         UserDefaults.standard.set(name, forKey: "gameName")
+    }
+    
+    func saveCategory(_ category: String) {
+        self.category = category
+        UserDefaults.standard.set(category, forKey: "category")
     }
 }

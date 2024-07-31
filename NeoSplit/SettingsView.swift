@@ -13,13 +13,18 @@ struct SettingsView: View {
     @AppStorage("resetKey") private var resetKey: String = "R"
     @EnvironmentObject var timerManager: TimerManager
     @State private var gameName: String = UserDefaults.standard.string(forKey: "gameName") ?? ""
-    
+    @State private var category: String = UserDefaults.standard.string(forKey: "category") ?? ""
+
     var body: some View {
         Form {
             Section(header: Text("Game Settings")) {
-                TextField("Game Name", text: $gameName)
+                TextField("Game", text: $gameName)
                     .onChange(of: gameName) { newValue in
                         timerManager.saveGameName(newValue)
+                    }
+                TextField("Category", text: $category)
+                    .onChange(of: category) { newValue in
+                        timerManager.saveCategory(newValue)
                     }
             }
             
@@ -47,6 +52,7 @@ struct SettingsView: View {
         .padding()
         .onAppear {
             gameName = timerManager.gameName
+            category = timerManager.category
         }
         .frame(width: 300, height: 200)
     }

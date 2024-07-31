@@ -13,8 +13,8 @@ class SettingsWindowController: NSWindowController, NSWindowDelegate {
 
     private init() {
         let window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 300, height: 150),
-            styleMask: [.titled, .closable],
+            contentRect: NSRect(x: 0, y: 0, width: 300, height: 250),
+            styleMask: [.titled, .resizable, .closable],
             backing: .buffered, defer: false)
         window.center()
         window.setFrameAutosaveName("Settings")

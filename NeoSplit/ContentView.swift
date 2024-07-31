@@ -15,7 +15,11 @@ struct ContentView: View {
         VStack {
             Text(timerManager.gameName)
                 .font(.title)
-                .padding()
+                .padding(.top)
+            
+            Text(timerManager.category)
+                .font(.subheadline)
+                .padding(.bottom)
             
             Text(timerManager.elapsedTimeString)
                 .font(.largeTitle)
