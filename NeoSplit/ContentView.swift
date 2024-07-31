@@ -10,6 +10,9 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var timerManager: TimerManager
     @StateObject private var keyEventHandler = KeyEventHandler()
+    @State private var backgroundColor: Color = Color(UserDefaults.standard.color(forKey: "backgroundColor") ?? .gray)
+    @State private var textColor: Color = Color(UserDefaults.standard.color(forKey: "textColor") ?? .white)
+    @State private var timerColor: Color = Color(UserDefaults.standard.color(forKey: "timerColor") ?? .green)
     
     var body: some View {
         VStack {
@@ -17,23 +20,25 @@ struct ContentView: View {
                 Text(timerManager.gameName)
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(textColor)
                     .padding([.top, .leading, .trailing])
                 
                 Text(timerManager.category)
                     .font(.title2)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(textColor)
                     .padding([.leading, .trailing, .bottom])
             }
             .background(Color.black)
             .cornerRadius(10)
+            .frame(maxWidth: .infinity)
             .padding()
-            
+
             Text(timerManager.elapsedTimeString)
                 .font(.system(size: 48, weight: .bold, design: .monospaced))
-                .foregroundStyle(.green)
+                .foregroundStyle(timerColor)
                 .padding()
                 .background(Color.black)
+                .frame(maxWidth: .infinity)
                 .cornerRadius(10)
                 .padding()
             
@@ -68,12 +73,13 @@ struct ContentView: View {
             .padding()
         }
         .padding()
-        .background(Color.gray.opacity(0.2))
+        .background(backgroundColor)
         .onAppear {
             keyEventHandler.timerManager = timerManager
             updateKeyBindings()
             NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: .main) { _ in
                 updateKeyBindings()
+                updateColors()
             }
         }
         .onDisappear {
@@ -88,6 +94,12 @@ struct ContentView: View {
         
         keyEventHandler.updateKeyBindings(startKey: startKey, stopKey: stopKey, resetKey: resetKey)
     }
+    
+    private func updateColors() {
+        backgroundColor = Color(UserDefaults.standard.color(forKey: "backgroundColor") ?? .gray)
+        textColor = Color(UserDefaults.standard.color(forKey: "textColor") ?? .white)
+        timerColor = Color(UserDefaults.standard.color(forKey: "timerColor") ?? .green)
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -101,7 +113,7 @@ struct LiveSplitButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .background(Color.black)
-            .foregroundStyle(.white)
+            .foregroundColor(.white)
             .cornerRadius(10)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)

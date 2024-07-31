@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AppKit
 
 struct SettingsView: View {
     @AppStorage("startKey") private var startKey: String = "S"
@@ -14,10 +15,14 @@ struct SettingsView: View {
     @EnvironmentObject var timerManager: TimerManager
     @State private var gameName: String = UserDefaults.standard.string(forKey: "gameName") ?? ""
     @State private var category: String = UserDefaults.standard.string(forKey: "category") ?? ""
+    
+    @State private var backgroundColor: Color = Color(UserDefaults.standard.color(forKey: "backgroundColor") ?? .gray)
+    @State private var textColor: Color = Color(UserDefaults.standard.color(forKey: "textColor") ?? .white)
+    @State private var timerColor: Color = Color(UserDefaults.standard.color(forKey: "timerColor") ?? .green)
 
     var body: some View {
         Form {
-            Section(header: Text("Game Settings").font(.headline).foregroundStyle(.white)) {
+            Section(header: Text("Game Settings").font(.headline).foregroundColor(textColor)) {
                 TextField("Game", text: $gameName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .onChange(of: gameName) { newValue in
@@ -29,39 +34,54 @@ struct SettingsView: View {
                         timerManager.saveCategory(newValue)
                     }
             }
-            .listRowBackground(Color.black)
-            
-            Section(header: Text("Key Bindings").font(.headline).foregroundStyle(.white)) {
+            .listRowBackground(backgroundColor)
+
+            Section(header: Text("Key Bindings").font(.headline).foregroundColor(textColor)) {
                 HStack {
-                    Text("Start").foregroundStyle(.white)
+                    Text("Start").foregroundColor(textColor)
                     TextField("", text: $startKey)
                         .frame(width: 50)
                         .multilineTextAlignment(.center)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
                 HStack {
-                    Text("Stop").foregroundStyle(.white)
+                    Text("Stop").foregroundColor(textColor)
                     TextField("", text: $stopKey)
                         .frame(width: 50)
                         .multilineTextAlignment(.center)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
                 HStack {
-                    Text("Reset").foregroundStyle(.white)
+                    Text("Reset").foregroundColor(textColor)
                     TextField("", text: $resetKey)
                         .frame(width: 50)
                         .multilineTextAlignment(.center)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
             }
-            .listRowBackground(Color.black)
+            .listRowBackground(backgroundColor)
+
+            Section(header: Text("Colors").font(.headline).foregroundColor(textColor)) {
+                ColorPicker("Background Color", selection: $backgroundColor)
+                    .onChange(of: backgroundColor) { newValue in
+                        UserDefaults.standard.set(newValue.toNSColor(), forKey: "backgroundColor")
+                    }
+                ColorPicker("Text Color", selection: $textColor)
+                    .onChange(of: textColor) { newValue in
+                        UserDefaults.standard.set(newValue.toNSColor(), forKey: "textColor")
+                    }
+                ColorPicker("Timer Color", selection: $timerColor)
+                    .onChange(of: timerColor) { newValue in
+                        UserDefaults.standard.set(newValue.toNSColor(), forKey: "timerColor")
+                    }
+            }
         }
         .padding()
         .onAppear {
             gameName = timerManager.gameName
             category = timerManager.category
         }
-        .frame(width: 300, height: 200)
+        .frame(width: 450, height: 330)
     }
 }
 
@@ -69,5 +89,39 @@ struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
             .environmentObject(TimerManager())
+    }
+}
+
+extension UserDefaults {
+    func color(forKey key: String) -> NSColor? {
+        if let data = data(forKey: key) {
+            do {
+                return try NSKeyedUnarchiver.unarchivedObject(ofClass: NSColor.self, from: data)
+            } catch {
+                print("Error retrieving color for key \(key): \(error)")
+                return nil
+            }
+        }
+        return nil
+    }
+
+    func set(_ value: NSColor?, forKey key: String) {
+        guard let value = value else {
+            removeObject(forKey: key)
+            return
+        }
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: value, requiringSecureCoding: false)
+            set(data, forKey: key)
+        } catch {
+            print("Error setting color for key \(key): \(error)")
+        }
+    }
+}
+
+extension Color {
+    func toNSColor() -> NSColor {
+        let components = self.cgColor?.components ?? [0, 0, 0, 1]
+        return NSColor(red: components[0], green: components[1], blue: components[2], alpha: components[3])
     }
 }
