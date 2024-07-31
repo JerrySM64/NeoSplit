@@ -15,10 +15,12 @@ struct SettingsView: View {
     @EnvironmentObject var timerManager: TimerManager
     @State private var gameName: String = UserDefaults.standard.string(forKey: "gameName") ?? ""
     @State private var category: String = UserDefaults.standard.string(forKey: "category") ?? ""
-    
     @State private var backgroundColor: Color = Color(UserDefaults.standard.color(forKey: "backgroundColor") ?? .gray)
     @State private var textColor: Color = Color(UserDefaults.standard.color(forKey: "textColor") ?? .white)
     @State private var timerColor: Color = Color(UserDefaults.standard.color(forKey: "timerColor") ?? .green)
+    @State private var selectedFontName: String = UserDefaults.standard.string(forKey: "selectedFontName") ?? "Helvetica"
+    
+    private let fontNames = ["Helvetica", "Arial", "Courier", "Times New Roman"]
 
     var body: some View {
         Form {
@@ -61,7 +63,7 @@ struct SettingsView: View {
             }
             .listRowBackground(backgroundColor)
 
-            Section(header: Text("Colors").font(.headline).foregroundColor(textColor)) {
+            Section(header: Text("User Interface").font(.headline).foregroundColor(textColor)) {
                 ColorPicker("Background Color", selection: $backgroundColor)
                     .onChange(of: backgroundColor) { newValue in
                         UserDefaults.standard.set(newValue.toNSColor(), forKey: "backgroundColor")
@@ -74,14 +76,23 @@ struct SettingsView: View {
                     .onChange(of: timerColor) { newValue in
                         UserDefaults.standard.set(newValue.toNSColor(), forKey: "timerColor")
                     }
+                Picker("Font", selection: $selectedFontName) {
+                    ForEach(fontNames, id: \.self) { fontName in
+                        Text(fontName).tag(fontName)
+                    }
+                }
+                .onChange(of: selectedFontName) { newValue in
+                    UserDefaults.standard.set(newValue, forKey: "selectedFontName")
+                }
             }
+            .listRowBackground(backgroundColor)
         }
         .padding()
         .onAppear {
             gameName = timerManager.gameName
             category = timerManager.category
         }
-        .frame(width: 450, height: 330)
+        .frame(width: 450, height: 400)
     }
 }
 

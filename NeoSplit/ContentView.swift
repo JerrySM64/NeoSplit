@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var timerManager: TimerManager
     @StateObject private var keyEventHandler = KeyEventHandler()
+    @State private var selectedFontName = UserDefaults.standard.string(forKey: "selectedFontName") ?? "Helvetica"
     @State private var backgroundColor: Color = Color(UserDefaults.standard.color(forKey: "backgroundColor") ?? .gray)
     @State private var textColor: Color = Color(UserDefaults.standard.color(forKey: "textColor") ?? .white)
     @State private var timerColor: Color = Color(UserDefaults.standard.color(forKey: "timerColor") ?? .green)
@@ -32,6 +33,10 @@ struct ContentView: View {
             .cornerRadius(10)
             .frame(maxWidth: .infinity)
             .padding()
+            //.overlay(
+            //    RoundedRectangle(cornerRadius: 10)
+            //        .stroke(Color.white, lineWidth: 2)
+            //)
 
             Text(timerManager.elapsedTimeString)
                 .font(.system(size: 48, weight: .bold, design: .monospaced))
@@ -41,6 +46,10 @@ struct ContentView: View {
                 .frame(maxWidth: .infinity)
                 .cornerRadius(10)
                 .padding()
+                //.overlay(
+                //    RoundedRectangle(cornerRadius: 10)
+                //        .stroke(Color.white, lineWidth: 2)
+                //)
             
             HStack {
                 Button(action: {
@@ -78,9 +87,9 @@ struct ContentView: View {
             keyEventHandler.timerManager = timerManager
             updateKeyBindings()
             NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: .main) { _ in
-                updateKeyBindings()
-                updateColors()
+                updateSettings()
             }
+            updateSettings()
         }
         .onDisappear {
             NotificationCenter.default.removeObserver(self, name: UserDefaults.didChangeNotification, object: nil)
@@ -95,7 +104,8 @@ struct ContentView: View {
         keyEventHandler.updateKeyBindings(startKey: startKey, stopKey: stopKey, resetKey: resetKey)
     }
     
-    private func updateColors() {
+    private func updateSettings() {
+        selectedFontName = UserDefaults.standard.string(forKey: "selectedFontName") ?? "Helvetica"
         backgroundColor = Color(UserDefaults.standard.color(forKey: "backgroundColor") ?? .gray)
         textColor = Color(UserDefaults.standard.color(forKey: "textColor") ?? .white)
         timerColor = Color(UserDefaults.standard.color(forKey: "timerColor") ?? .green)
