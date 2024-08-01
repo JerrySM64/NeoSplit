@@ -23,7 +23,7 @@ struct ContentView: View {
                     .fontWeight(.bold)
                     .foregroundStyle(textColor)
                     .padding([.top, .leading, .trailing])
-                
+                        
                 Text(timerManager.category)
                     .font(.title2)
                     .foregroundStyle(textColor)
@@ -31,25 +31,23 @@ struct ContentView: View {
             }
             .background(Color.black)
             .cornerRadius(10)
-            .frame(maxWidth: .infinity)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.white, lineWidth: 2)
+            )
             .padding()
-            //.overlay(
-            //    RoundedRectangle(cornerRadius: 10)
-            //        .stroke(Color.white, lineWidth: 2)
-            //)
 
             Text(timerManager.elapsedTimeString)
                 .font(.system(size: 48, weight: .bold, design: .monospaced))
                 .foregroundStyle(timerColor)
                 .padding()
                 .background(Color.black)
-                .frame(maxWidth: .infinity)
                 .cornerRadius(10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.white, lineWidth: 2)
+                )
                 .padding()
-                //.overlay(
-                //    RoundedRectangle(cornerRadius: 10)
-                //        .stroke(Color.white, lineWidth: 2)
-                //)
             
             HStack {
                 Button(action: {
@@ -112,13 +110,6 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-            .environmentObject(TimerManager())
-    }
-}
-
 struct LiveSplitButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -132,3 +123,11 @@ struct LiveSplitButtonStyle: ButtonStyle {
             .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
     }
 }
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+            .environmentObject(TimerManager())
+    }
+}
+
