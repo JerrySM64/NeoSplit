@@ -36,6 +36,26 @@ struct ContentView: View {
                     .stroke(Color.white, lineWidth: 2)
             )
             .padding()
+            
+            List {
+                ForEach(timerManager.splits) { split in
+                    HStack {
+                        Text(split.name)
+                            .foregroundStyle(textColor)
+                        Spacer()
+                        Text(split.timeString)
+                            .foregroundStyle(timerColor)
+                    }
+                    .frame(maxHeight: 300)
+                    .background(Color.black)
+                    .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.white, lineWidth: 2)
+                    )
+                    .padding()
+                }
+            }
 
             Text(timerManager.elapsedTimeString)
                 .font(.system(size: 48, weight: .bold, design: .monospaced))
@@ -130,4 +150,3 @@ struct ContentView_Previews: PreviewProvider {
             .environmentObject(TimerManager())
     }
 }
-

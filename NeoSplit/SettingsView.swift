@@ -19,6 +19,7 @@ struct SettingsView: View {
     @State private var textColor: Color = Color(UserDefaults.standard.color(forKey: "textColor") ?? .white)
     @State private var timerColor: Color = Color(UserDefaults.standard.color(forKey: "timerColor") ?? .green)
     @State private var selectedFontName: String = UserDefaults.standard.string(forKey: "selectedFontName") ?? "Helvetica"
+    @State private var splits: [Split] = UserDefaults.standard.splits(forKey: "splits") ?? [Split(name: "Split 1")]
     
     private let fontNames = ["Helvetica", "Arial", "Courier", "Times New Roman"]
 
@@ -37,6 +38,21 @@ struct SettingsView: View {
                     }
             }
             .listRowBackground(backgroundColor)
+            
+            Section(header: Text("Splits").font(.headline).foregroundColor(textColor)) {
+                ForEach($splits) { $split in
+                    TextField("Split Name", text: $split.name)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .onChange(of: split.name) { newValue in
+                            timerManager.updateSplits(splits)
+                        }
+                }
+                Button(action: {
+                    splits.append(Split(name: "New Split"))
+                }) {
+                    Text("Add Split")
+                }
+            }
 
             Section(header: Text("Key Bindings").font(.headline).foregroundColor(textColor)) {
                 HStack {
@@ -91,8 +107,13 @@ struct SettingsView: View {
         .onAppear {
             gameName = timerManager.gameName
             category = timerManager.category
+            splits = UserDefaults.standard.splits(forKey: "splits") ?? [Split(name: "Split 1")]
         }
-        .frame(width: 450, height: 400)
+        .onChange(of: splits) { newValue in
+            UserDefaults.standard.setSplits(newValue, forKey: "splits")
+            timerManager.updateSplits(newValue)
+        }
+        .frame(width: 450, height: 600)
     }
 }
 
@@ -126,6 +147,21 @@ extension UserDefaults {
             set(data, forKey: key)
         } catch {
             print("Error setting color for key \(key): \(error)")
+        }
+    }
+    
+    func splits(forKey key: String) -> [Split]? {
+        if let data = data(forKey: key) {
+            let decoder = JSONDecoder()
+            return try? decoder.decode([Split].self, from: data)
+        }
+        return nil
+    }
+
+    func setSplits(_ splits: [Split], forKey key: String) {
+        let encoder = JSONEncoder()
+        if let data = try? encoder.encode(splits) {
+            set(data, forKey: key)
         }
     }
 }

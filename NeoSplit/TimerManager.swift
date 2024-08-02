@@ -12,10 +12,19 @@ class TimerManager: ObservableObject {
     @Published var elapsedTimeString: String = "00:00:00.000"
     @Published var gameName: String = UserDefaults.standard.string(forKey: "gameName") ?? "Unknown Game"
     @Published var category: String = UserDefaults.standard.string(forKey: "category") ?? "Any%"
+    @Published var splits: [Split] = {
+        if let data = UserDefaults.standard.data(forKey: "splits"),
+           let decodedSplits = try? JSONDecoder().decode([Split].self, from: data) {
+            return decodedSplits
+        } else {
+            return []
+        }
+    }()
 
     private var timer: Timer?
     private var startDate: Date?
     private var pausedTime: TimeInterval = 0
+    private var splitIndex: Int = 0
 
     func start() {
         if timer == nil {
@@ -41,6 +50,15 @@ class TimerManager: ObservableObject {
         startDate = nil
         elapsedTimeString = "00:00:00.000"
     }
+    
+    func split() {
+        guard splitIndex < splits.count, let startDate = startDate else { return }
+        let currentElapsedTime = Date().timeIntervalSince(startDate)
+        let totalElapsedTime = pausedTime + currentElapsedTime
+        splits[splitIndex].time = totalElapsedTime
+        splitIndex += 1
+        saveSplits()
+    }
 
     private func updateElapsedTime() {
         guard let startDate = startDate else { return }
@@ -62,5 +80,17 @@ class TimerManager: ObservableObject {
     func saveCategory(_ category: String) {
         self.category = category
         UserDefaults.standard.set(category, forKey: "category")
+    }
+    
+    func saveSplits() {
+        if let encoded = try? JSONEncoder().encode(splits) {
+            UserDefaults.standard.set(encoded, forKey: "splits")
+        }
+    }
+    
+    func updateSplits(_ newSplits: [Split]) {
+        splits = newSplits
+        splitIndex = 0
+        saveSplits()
     }
 }
