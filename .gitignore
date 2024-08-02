@@ -1,2 +1,9 @@
 .DS_Store
-NeoSplit/.DS_Store
+xcuserdata/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+timeline.xctimeline
+playground.xcworkspace
+.build/
