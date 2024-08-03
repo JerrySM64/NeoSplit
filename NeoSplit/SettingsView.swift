@@ -47,10 +47,21 @@ struct SettingsView: View {
                             timerManager.updateSplits(splits)
                         }
                 }
-                Button(action: {
-                    splits.append(Split(name: "New Split"))
-                }) {
-                    Text("Add Split")
+                HStack {
+                    Button(action: {
+                        splits.append(Split(name: "New Split"))
+                    }) {
+                        Text("Add Split")
+                    }
+                    Button(action: {
+                        if !splits.isEmpty {
+                            splits.removeLast()
+                            timerManager.updateSplits(splits)
+                        }
+                    }) {
+                        Text("Delete Split")
+                            .foregroundStyle(.red)
+                    }
                 }
             }
 
@@ -82,15 +93,15 @@ struct SettingsView: View {
             Section(header: Text("User Interface").font(.headline).foregroundColor(textColor)) {
                 ColorPicker("Background Color", selection: $backgroundColor)
                     .onChange(of: backgroundColor) { newValue in
-                        UserDefaults.standard.set(newValue.toNSColor(), forKey: "backgroundColor")
+                        UserDefaults.standard.set(newValue.toNSColorData(), forKey: "backgroundColor")
                     }
                 ColorPicker("Text Color", selection: $textColor)
                     .onChange(of: textColor) { newValue in
-                        UserDefaults.standard.set(newValue.toNSColor(), forKey: "textColor")
+                        UserDefaults.standard.set(newValue.toNSColorData(), forKey: "textColor")
                     }
                 ColorPicker("Timer Color", selection: $timerColor)
                     .onChange(of: timerColor) { newValue in
-                        UserDefaults.standard.set(newValue.toNSColor(), forKey: "timerColor")
+                        UserDefaults.standard.set(newValue.toNSColorData(), forKey: "timerColor")
                     }
                 Picker("Font", selection: $selectedFontName) {
                     ForEach(fontNames, id: \.self) { fontName in
@@ -113,7 +124,7 @@ struct SettingsView: View {
             UserDefaults.standard.setSplits(newValue, forKey: "splits")
             timerManager.updateSplits(newValue)
         }
-        .frame(width: 450, height: 600)
+        .frame(minWidth: 450, minHeight: 600)
     }
 }
 
@@ -170,5 +181,10 @@ extension Color {
     func toNSColor() -> NSColor {
         let components = self.cgColor?.components ?? [0, 0, 0, 1]
         return NSColor(red: components[0], green: components[1], blue: components[2], alpha: components[3])
+    }
+
+    func toNSColorData() -> Data? {
+        let nsColor = self.toNSColor()
+        return try? NSKeyedArchiver.archivedData(withRootObject: nsColor, requiringSecureCoding: false)
     }
 }

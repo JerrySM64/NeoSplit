@@ -10,9 +10,10 @@ import Foundation
 struct Split: Identifiable, Equatable, Codable {
     let id: UUID
     var name: String
-    var time: TimeInterval
+    var time: TimeInterval?
     
     var timeString: String {
+        guard let time = time else { return "--:--:--.---" }
         let hours = Int(time) / 3600
         let minutes = Int(time) / 60 % 60
         let seconds = Int(time) % 60

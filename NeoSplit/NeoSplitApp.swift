@@ -15,6 +15,12 @@ struct NeoSplitApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(timerManager)
+                .frame(minWidth: 460, minHeight: 570)
+                .onAppear {
+                    if let window = NSApplication.shared.windows.first {
+                        window.minSize = NSSize(width: 460, height: 570)
+                    }
+                }
         }
         .commands {
             CommandGroup(replacing: .appSettings) {

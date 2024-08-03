@@ -20,6 +20,7 @@ class SettingsWindowController: NSWindowController, NSWindowDelegate {
         window.setFrameAutosaveName("Settings")
         window.isReleasedWhenClosed = false
         window.contentView = NSHostingView(rootView: SettingsView().environmentObject(TimerManager()))
+        window.minSize = NSSize(width: 450, height: 600)
         super.init(window: window)
         self.window?.delegate = self
     }

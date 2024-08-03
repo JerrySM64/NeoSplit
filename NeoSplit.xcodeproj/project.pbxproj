@@ -417,11 +417,11 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1A42;
+				CURRENT_PROJECT_VERSION = 1A60;
 				DEVELOPMENT_ASSET_PATHS = "\"NeoSplit/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "NeoSplit PRE-ALPHA  202408021706";
+				INFOPLIST_KEY_CFBundleDisplayName = "NeoSplit 1.0 Alpha 1";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -446,11 +446,11 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1A42;
+				CURRENT_PROJECT_VERSION = 1A60;
 				DEVELOPMENT_ASSET_PATHS = "\"NeoSplit/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "NeoSplit PRE-ALPHA  202408021706";
+				INFOPLIST_KEY_CFBundleDisplayName = "NeoSplit 1.0 Alpha 1";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (

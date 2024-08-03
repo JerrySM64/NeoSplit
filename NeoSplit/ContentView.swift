@@ -42,20 +42,21 @@ struct ContentView: View {
                     HStack {
                         Text(split.name)
                             .foregroundStyle(textColor)
+                            .padding(5)
                         Spacer()
                         Text(split.timeString)
                             .foregroundStyle(timerColor)
+                            .padding(5)
                     }
-                    .frame(maxHeight: 300)
-                    .background(Color.black)
-                    .cornerRadius(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.white, lineWidth: 2)
-                    )
-                    .padding()
                 }
             }
+            .background(Color.black)
+            .cornerRadius(10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.white, lineWidth: 2)
+            )
+            .padding()
 
             Text(timerManager.elapsedTimeString)
                 .font(.system(size: 48, weight: .bold, design: .monospaced))
@@ -71,9 +72,13 @@ struct ContentView: View {
             
             HStack {
                 Button(action: {
-                    timerManager.start()
+                    if !timerManager.isRunning {
+                        timerManager.start()
+                    } else {
+                        timerManager.split()
+                    }
                 }) {
-                    Text("Start")
+                    Text(timerManager.isRunning ? "Split" : "Start")
                         .padding()
                         .frame(maxWidth: .infinity)
                 }

@@ -35,7 +35,11 @@ class KeyEventHandler: ObservableObject {
         
         switch characters {
             case startKey:
+            if !timerManager.isRunning {
                 timerManager.start()
+            } else {
+                timerManager.split()
+            }
             case stopKey:
                 timerManager.stop()
             case resetKey:
