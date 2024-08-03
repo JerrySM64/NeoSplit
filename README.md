@@ -1,8 +1,8 @@
 # NeoSplit - LiveSplit for the rest of us
 
-![image](https://github.com/user-attachments/assets/fb3e3b46-ffc7-4eb6-84d9-195f3eadc8e2)
+![image](https://github.com/user-attachments/assets/14164546-9768-4f88-b034-4229e246b87d)
 
-*This screenshot is from the first Pre-Alpha Release version and is subject to change.*
+*This screenshot is from the Alpha 1 Release and is subject to change.*
 
 ## Why was this project started?
 I started this project because I speedrun Mario Kart 64: Amped Up!. They have the requirement to have a timer being shown, but LiveSpilt doesn't support macOS (or Linux) and I couldn't find a suitable alternative for macOS. So I decided to make my own, dusting off my Swift skills while at it.
