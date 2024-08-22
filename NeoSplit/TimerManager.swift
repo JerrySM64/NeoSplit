@@ -66,6 +66,23 @@ class TimerManager: ObservableObject {
         }
     }
 
+    func undoSplit() {
+        if currentSplitIndex > 0 {
+            currentSplitIndex -= 1
+            splits[currentSplitIndex].time = nil
+        }
+    }
+
+    func skipSplit() {
+        if currentSplitIndex < splits.count {
+            splits[currentSplitIndex].time = nil
+            currentSplitIndex += 1
+            if currentSplitIndex >= splits.count {
+                stop()
+            }
+        }
+    }
+
     private func updateElapsedTime() {
         guard let startDate = startDate else { return }
         let currentElapsedTime = Date().timeIntervalSince(startDate)

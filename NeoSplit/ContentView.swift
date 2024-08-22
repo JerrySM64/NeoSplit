@@ -123,8 +123,10 @@ struct ContentView: View {
         let startKey = UserDefaults.standard.string(forKey: "startKey") ?? "S"
         let stopKey = UserDefaults.standard.string(forKey: "stopKey") ?? "T"
         let resetKey = UserDefaults.standard.string(forKey: "resetKey") ?? "R"
+        let undoSplitKey = UserDefaults.standard.string(forKey: "undoSplitKey") ?? "U"
+        let skipSplitKey = UserDefaults.standard.string(forKey: "skipSplitKey") ?? "K"
         
-        keyEventHandler.updateKeyBindings(startKey: startKey, stopKey: stopKey, resetKey: resetKey)
+        keyEventHandler.updateKeyBindings(startKey: startKey, stopKey: stopKey, resetKey: resetKey, undoSplitKey: undoSplitKey, skipSplitKey: skipSplitKey)
     }
     
     private func updateSettings() {

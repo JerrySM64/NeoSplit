@@ -12,6 +12,8 @@ struct SettingsView: View {
     @AppStorage("startKey") private var startKey: String = "S"
     @AppStorage("stopKey") private var stopKey: String = "T"
     @AppStorage("resetKey") private var resetKey: String = "R"
+    @AppStorage("undoSplitKey") private var undoSplitKey: String = "U"
+    @AppStorage("skipSplitKey") private var skipSplitKey: String = "K"
     @EnvironmentObject var timerManager: TimerManager
     @State private var gameName: String = UserDefaults.standard.string(forKey: "gameName") ?? ""
     @State private var category: String = UserDefaults.standard.string(forKey: "category") ?? ""
@@ -83,6 +85,20 @@ struct SettingsView: View {
                 HStack {
                     Text("Reset").foregroundColor(textColor)
                     TextField("", text: $resetKey)
+                        .frame(width: 50)
+                        .multilineTextAlignment(.center)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
+                HStack {
+                    Text("Undo Split").foregroundColor(textColor)
+                    TextField("", text: $undoSplitKey)
+                        .frame(width: 50)
+                        .multilineTextAlignment(.center)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
+                HStack {
+                    Text("Skip Split").foregroundColor(textColor)
+                    TextField("", text: $skipSplitKey)
                         .frame(width: 50)
                         .multilineTextAlignment(.center)
                         .textFieldStyle(RoundedBorderTextFieldStyle())

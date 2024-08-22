@@ -11,16 +11,20 @@ class KeyEventHandler: ObservableObject {
     private var startKey: String = "S"
     private var stopKey: String = "T"
     private var resetKey: String = "R"
+    private var undoSplitKey: String = "U"
+    private var skipSplitKey: String = "K"
     weak var timerManager: TimerManager?
     
     init() {
         setupKeyEventMonitoring()
     }
     
-    func updateKeyBindings(startKey: String, stopKey: String, resetKey: String) {
+    func updateKeyBindings(startKey: String, stopKey: String, resetKey: String, undoSplitKey: String, skipSplitKey: String) {
         self.startKey = startKey
         self.stopKey = stopKey
         self.resetKey = resetKey
+        self.undoSplitKey = undoSplitKey 
+        self.skipSplitKey = skipSplitKey
     }
     
     private func setupKeyEventMonitoring() {
@@ -35,15 +39,19 @@ class KeyEventHandler: ObservableObject {
         
         switch characters {
             case startKey:
-            if !timerManager.isRunning {
-                timerManager.start()
-            } else {
-                timerManager.split()
-            }
+                if !timerManager.isRunning {
+                    timerManager.start()
+                } else {
+                    timerManager.split()
+                }
             case stopKey:
                 timerManager.stop()
             case resetKey:
                 timerManager.reset()
+            case undoSplitKey:
+                timerManager.undoSplit()
+            case skipSplitKey:
+                timerManager.skipSplit()
             default:
                 break
         }
